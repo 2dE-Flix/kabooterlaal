@@ -1,5 +1,5 @@
 /* =========================================
-   RAVIE.IN - MASTER STYLESHEET (v2.3 FIXED)
+   RAVIE.IN - MASTER STYLESHEET (v2.4 FIXED)
    ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sen:wght@400;500;600;700&display=swap');
@@ -69,7 +69,6 @@ a, button, span, .split-option, .hamburger, .social-card {
     transform: scale(1.05) translateY(0);
 }
 
-/* RESTORED: Lifted brightness to prevent black-out */
 #webgl-canvas.depth-deep {
     filter: blur(34px) brightness(0.50) saturate(1.4) hue-rotate(3deg);
     transform: scale(1.15) translateY(-4vh);
@@ -186,7 +185,7 @@ a, button, span, .split-option, .hamburger, .social-card {
     display: flex; flex-direction: column; gap: 0.3rem; z-index: 100;
 }
 
-/* Legal pages sidebar compass (mirrors platform-sidebar) */
+/* Legal pages sidebar compass */
 .sidebar-compass {
     position: fixed; left: 3rem; top: 50%; transform: translateY(-50%);
     display: flex; flex-direction: column; gap: 0.3rem; z-index: 100;
@@ -281,8 +280,6 @@ a, button, span, .split-option, .hamburger, .social-card {
 .social-card:hover h3 { color: var(--brand-accent); text-shadow: 0px 0px 15px rgba(0, 229, 255, 0.5); }
 .social-card:hover p { color: #e5e7eb; }
 
-.micro-data-stream { display: none; }
-
 #console-clock {
     position: fixed; bottom: 2rem; left: 2.5rem; 
     font-size: 0.6rem; letter-spacing: 3px; color: var(--text-primary); text-transform: uppercase; z-index: 10; pointer-events: none; font-weight: 600;
@@ -341,10 +338,10 @@ a, button, span, .split-option, .hamburger, .social-card {
         position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 3rem; border-left: none; padding-left: 0; z-index: 40;
     }
     .sidebar-compass {
-        position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 3rem; border-left: none; padding-left: 0; z-index: 40;
+        position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 1.5rem; border-left: none; padding-left: 0; z-index: 40;
     }
     .sidebar-option { padding: 0.5rem; border-left: none; border-radius: 0; background: transparent; position: relative; }
-    .sidebar-option span { font-size: 0.65rem; letter-spacing: 4px; opacity: 0.6; }
+    .sidebar-option span { font-size: 0.6rem; letter-spacing: 3px; opacity: 0.6; }
     .sidebar-option.active-sidebar span { opacity: 1; }
     .sidebar-option::after {
         content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0%; height: 2px;
@@ -378,6 +375,28 @@ a, button, span, .split-option, .hamburger, .social-card {
     #mobile-dropdown.active-menu {
         height: auto; max-height: 80vh; overflow-y: auto;
         box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45); 
+    }
+
+    /* Mobile legal submenu */
+    .compass-secondary {
+        position: fixed;
+        left: 0;
+        top: 10rem;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        border-left: none;
+        z-index: 40;
+    }
+    .sidebar-sub-option span {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+    .sidebar-sub-option.active-sub span {
+        color: #00E5FF;
     }
 }
 
@@ -414,24 +433,62 @@ a, button, span, .split-option, .hamburger, .social-card {
     .terminal-link { font-size: 0.85rem; letter-spacing: 3px; }
 
     #webgl-canvas.depth-surface { filter: blur(32px) brightness(0.55) contrast(1.15) saturate(1.3); }
-
-    /* RESTORED DESKTOP: Lifted brightness to 0.55 to match homescreen */
     #webgl-canvas.depth-deep { filter: blur(32px) brightness(0.55) contrast(1.15) saturate(1.3); }
-
     #webgl-canvas.frozen-blur { filter: blur(75px) brightness(0.4); }
     .liquid-glass-overlay { background: rgba(8, 15, 26, 0.3); }
 
-    @media (min-width: 1250px) {
-        #ledger-talents, #ledger-brands { position: relative; }
-        .micro-data-stream {
-            display: flex; flex-direction: column; position: absolute;
-            right: 36px; top: 50%; transform: translateY(-50%); width: 320px; z-index: 10;
-            background: rgba(16, 26, 42, 0.45); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25); border-radius: 20px; 
-            border: 1px solid rgba(195, 211, 226, 0.12); padding: 28px;
-            font-family: 'Courier New', Courier, monospace; color: rgba(195, 211, 226, 0.75);
-            font-size: 0.75rem; letter-spacing: 1px;
-        }
-    }
+    .data-header { display: flex; align-items: center; gap: 12px; color: rgba(238, 244, 250, 0.95); margin-bottom: 16px; font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; }
+    .data-pulse { width: 6px; height: 6px; background: #00E5FF; border-radius: 50%; box-shadow: 0 0 10px #00E5FF; animation: pulse-glow 2s infinite; }
+    .data-divider { width: 100%; height: 1px; background: rgba(195, 211, 226, 0.12); margin: 16px 0; }
+    .data-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .data-row span:last-child { color: rgba(238, 244, 250, 0.9); }
+    .data-footer { line-height: 2.0; color: rgba(195, 211, 226, 0.5); }
 
-    .data-header { display: flex; al
+    @keyframes pulse-glow {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; box-shadow: 0 0 12px #00E5FF; }
+        100% { opacity: 0.4; }
+    }
+}
+
+/* =========================================
+   LEGAL LEFT-SIDEBAR NESTED SUB-MENU
+   ========================================= */
+.compass-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(195, 211, 226, 0.15); 
+}
+
+.sidebar-sub-option span {
+    font-size: 0.5rem; 
+    letter-spacing: 4px;
+    color: rgba(195, 211, 226, 0.4); 
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.sidebar-sub-option:hover span {
+    color: rgba(238, 244, 250, 0.85); 
+}
+
+.sidebar-sub-option.active-sub span {
+    color: #00E5FF;
+    font-weight: 600;
+}
+
+.submenu-closed {
+    display: none !important;
+}
+
+.submenu-open {
+    display: flex !important;
+    animation: textFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
