@@ -1,5 +1,5 @@
 /* =========================================
-   RAVIE.IN - MASTER STYLESHEET (v2.5 LEGAL)
+   RAVIE.IN - MASTER STYLESHEET (v2.6 FINAL)
    ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sen:wght@400;500;600;700&display=swap');
@@ -206,8 +206,12 @@ a, button, span, .split-option, .hamburger, .social-card {
 }
 
 .platform-content {
-    display: flex; justify-content: flex-start; align-items: flex-start;
-    height: 100dvh; width: 100%; padding: 8rem 10vw 4rem 18rem; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100dvh;
+    width: 100%;
+    padding: 6rem 10vw 4rem 18rem;
     overflow-y: auto;
 }
 
@@ -388,9 +392,15 @@ a, button, span, .split-option, .hamburger, .social-card {
         position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 3rem; border-left: none; padding-left: 0; z-index: 40;
     }
     .sidebar-compass {
-        position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 1.5rem; border-left: none; padding-left: 0; z-index: 40;
+        position: fixed; left: 0; top: 7rem; width: 100vw; flex-direction: row; justify-content: center; gap: 1rem; border-left: none; padding-left: 0; z-index: 40;
     }
-    .sidebar-option { padding: 0.5rem; border-left: none; border-radius: 0; background: transparent; position: relative; }
+    .sidebar-option { 
+        padding: 0.5rem; 
+        border-left: none !important; 
+        border-radius: 0; 
+        background: transparent; 
+        position: relative; 
+    }
     .sidebar-option span { font-size: 0.6rem; letter-spacing: 3px; opacity: 0.6; }
     .sidebar-option.active-sidebar span { opacity: 1; }
     .sidebar-option::after {
@@ -398,6 +408,28 @@ a, button, span, .split-option, .hamburger, .social-card {
         background: #00E5FF; box-shadow: 0 0 10px rgba(0, 229, 255, 0.8); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0;
     }
     .sidebar-option.active-sidebar::after { width: 100%; opacity: 1; }
+
+    /* Remove vertical line on mobile sidebar (compass-secondary border-left) */
+    .compass-secondary {
+        position: fixed;
+        left: 0;
+        top: 10rem;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        border-left: none !important;
+        z-index: 40;
+    }
+    .sidebar-sub-option span {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+    .sidebar-sub-option.active-sub span {
+        color: #00E5FF;
+    }
 
     .split-container { flex-direction: column; gap: 4.5rem; }
     .split-icon { height: 36px; max-width: 120px; }
@@ -425,28 +457,6 @@ a, button, span, .split-option, .hamburger, .social-card {
     #mobile-dropdown.active-menu {
         height: auto; max-height: 80vh; overflow-y: auto;
         box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45); 
-    }
-
-    /* Mobile legal submenu */
-    .compass-secondary {
-        position: fixed;
-        left: 0;
-        top: 10rem;
-        width: 100vw;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
-        border-left: none;
-        z-index: 40;
-    }
-    .sidebar-sub-option span {
-        font-size: 0.55rem;
-        letter-spacing: 2px;
-    }
-    .sidebar-sub-option.active-sub span {
-        color: #00E5FF;
     }
 
     /* Mobile legal content */
