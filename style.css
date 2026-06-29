@@ -756,3 +756,17 @@ a, button, span, .split-option, .hamburger, .social-card {
         letter-spacing: 1px;
     }
 }
+
+@media (min-width: 1024px) {
+
+  .contact-content.raw-text-block {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-intro {
+    text-align: left;
+  }
+
+}
