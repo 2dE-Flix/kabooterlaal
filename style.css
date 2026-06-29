@@ -163,11 +163,29 @@ a, button, span, .split-option, .hamburger, .social-card {
     transform: translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.glass-nav-links span:hover {
+    font-weight: 700;
+}
+
 .liquid-glass-overlay.active-glass .glass-nav-links span { opacity: 1; transform: translateY(0); }
 .liquid-glass-overlay.active-glass .glass-nav-links span:nth-child(1) { transition-delay: 0.1s; }
 .liquid-glass-overlay.active-glass .glass-nav-links span:nth-child(2) { transition-delay: 0.2s; }
 .liquid-glass-overlay.active-glass .glass-nav-links span:nth-child(3) { transition-delay: 0.3s; }
 .liquid-glass-overlay.active-glass .glass-nav-links span:nth-child(4) { transition-delay: 0.4s; }
+
+.copyright-footer {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    color: rgba(195, 211, 226, 0.4);
+    text-transform: uppercase;
+    font-weight: 600;
+    pointer-events: none;
+}
 
 /* =========================================
    6. INNER PLATFORM LEDGER
@@ -202,7 +220,7 @@ a, button, span, .split-option, .hamburger, .social-card {
     opacity: 1;
     background: linear-gradient(90deg, rgba(0, 229, 255, 0.1) 0%, transparent 100%);
     border-left: 2px solid #00E5FF;
-    transform: translateX(5px); 
+    transform: translateX(5px);
 }
 
 .platform-content {
@@ -283,11 +301,11 @@ a, button, span, .split-option, .hamburger, .social-card {
 }
 
 .legal-blockquote {
-    margin: 1.5rem 0;
-    padding: 1.5rem 2rem;
-    background: rgba(0, 229, 255, 0.04);
-    border-left: 3px solid rgba(0, 229, 255, 0.4);
-    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+    padding: 0;
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
 }
 
 .legal-blockquote p {
@@ -378,12 +396,14 @@ a, button, span, .split-option, .hamburger, .social-card {
         position: fixed; top: 85px; left: 5%; width: 90%;
         background: rgba(0, 2, 8, 0.35); backdrop-filter: blur(40px) saturate(150%); -webkit-backdrop-filter: blur(40px) saturate(150%);
         border: 1px solid rgba(238, 244, 250, 0.15); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(238, 244, 250, 0.1);
-        border-radius: 24px; padding: 1.2rem 1rem; display: flex; flex-direction: column; z-index: 250; 
+        border-radius: 24px; padding: 1.2rem 1rem; display: flex; flex-direction: column; z-index: 250;
         opacity: 0; pointer-events: none; transform: translateY(-20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow-y: auto; max-height: 80vh;
     }
     .mobile-dropdown.active-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
     .mobile-nav-links { display: flex; flex-direction: column; width: 100%; gap: 0.3rem; }
-    .mobile-nav-links span { font-size: 0.9rem; letter-spacing: 3px; padding: 0.8rem 1.5rem; border-radius: 12px; text-align: left; }
+    .mobile-nav-links span { font-size: 0.9rem; letter-spacing: 3px; padding: 0.8rem 1.5rem; border-radius: 12px; text-align: left; font-weight: 600; transition: font-weight 0.3s ease; }
+    .mobile-nav-links span:hover { font-weight: 700; }
 
     .platform-content { padding: 11rem 5vw 4rem 5vw; height: auto; min-height: 100vh; }
     #platform-view { height: auto; min-height: 100dvh; }
@@ -423,6 +443,10 @@ a, button, span, .split-option, .hamburger, .social-card {
         border-left: none !important;
         z-index: 40;
     }
+    .sidebar-sub-option {
+        border-left: none !important;
+        background: transparent !important;
+    }
     .sidebar-sub-option span {
         font-size: 0.55rem;
         letter-spacing: 2px;
@@ -434,7 +458,7 @@ a, button, span, .split-option, .hamburger, .social-card {
     .split-container { flex-direction: column; gap: 4.5rem; }
     .split-icon { height: 36px; max-width: 120px; }
     .split-text { font-size: 0.7rem; letter-spacing: 5px; }
-    .gateway-menu-toggle, .liquid-glass-overlay, #console-clock { display: none; }
+    .gateway-menu-toggle, .liquid-glass-overlay, #console-clock, .copyright-footer { display: none; }
 
     .page-container { padding-top: 8rem; }
     .page-title { margin-bottom: 60px; }
@@ -455,8 +479,7 @@ a, button, span, .split-option, .hamburger, .social-card {
     }
 
     #mobile-dropdown.active-menu {
-        height: auto; max-height: 80vh; overflow-y: auto;
-        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45); 
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     }
 
     /* Mobile legal content */
@@ -469,8 +492,8 @@ a, button, span, .split-option, .hamburger, .social-card {
         line-height: 1.7;
     }
     .legal-blockquote {
-        padding: 1rem 1.2rem;
-        margin: 1rem 0;
+        padding: 0;
+        margin: 0.5rem 0;
     }
 }
 
@@ -552,4 +575,184 @@ a, button, span, .split-option, .hamburger, .social-card {
 .submenu-open {
     display: flex !important;
     animation: textFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================
+   LEGAL PAGE HORIZONTAL TABS
+   ========================================= */
+.legal-container {
+    padding-top: 140px;
+}
+
+.legal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.legal-tab {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: rgba(195, 211, 226, 0.5);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.7rem 0.5rem;
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.legal-tab:hover {
+    color: rgba(238, 244, 250, 0.85);
+}
+
+.legal-tab.active-tab {
+    color: var(--text-primary);
+}
+
+.legal-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: #00E5FF;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.legal-tab.active-tab::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Sub-tabs for TOS pages */
+.legal-sub-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.legal-sub-tab {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    color: rgba(195, 211, 226, 0.4);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.3rem;
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.legal-sub-tab:hover {
+    color: rgba(238, 244, 250, 0.75);
+}
+
+.legal-sub-tab.active-sub-tab {
+    color: #00E5FF;
+}
+
+.legal-content {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Adjust page title for legal pages with tabs */
+.legal-container .page-title {
+    margin-top: 2rem;
+    margin-bottom: 60px;
+}
+
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+.contact-container {
+    padding-top: 140px;
+}
+
+.contact-container .page-title {
+    margin-bottom: 60px;
+}
+
+.contact-intro {
+    font-size: 1.05rem;
+    color: rgba(238, 244, 250, 0.75);
+    margin-bottom: 3rem;
+    line-height: 1.85;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact-links .terminal-link {
+    margin-top: 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   MOBILE: LEGAL TABS & CONTACT
+   ========================================= */
+@media (max-width: 768px) {
+    .legal-container {
+        padding-top: 10rem;
+    }
+
+    .legal-tabs {
+        gap: 1rem;
+    }
+
+    .legal-tab {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .legal-sub-tabs {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .legal-sub-tab {
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .legal-container .page-title {
+        margin-top: 1rem;
+        margin-bottom: 40px;
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+
+    .legal-content {
+        padding: 0 1rem;
+    }
+
+    .contact-container {
+        padding-top: 10rem;
+    }
+
+    .contact-container .page-title {
+        margin-bottom: 40px;
+    }
+
+    .contact-links .terminal-link {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
 }
