@@ -726,12 +726,11 @@ a, button, span, .split-option, .hamburger, .social-card {
         gap: 1rem;
         margin-bottom: 2rem;
     }
-
     .legal-sub-tab {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
         letter-spacing: 2px;
+        padding: 0.6rem 0.4rem;
     }
-
     .legal-container .page-title {
         margin-top: 1rem;
         margin-bottom: 40px;
