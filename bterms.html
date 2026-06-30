@@ -6,7 +6,6 @@
     <title>RAVIE - Terms for Brands</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Sen:wght@400;600&display=swap" rel="stylesheet">
-<base target="_blank">
 </head>
 <body class="legal-page">
     <canvas id="webgl-canvas" class="depth-surface"></canvas>
@@ -44,7 +43,22 @@
             <span onclick="window.location.href='tterms.html'">TOS &mdash; TALENTS</span>
         </nav>
     </div>
-
+<aside class="legal-sidebar">
+    <div class="sidebar-option" onclick="window.location.href='policy.html'">
+        <span>PRIVACY POLICY</span>
+    </div>
+    <div class="sidebar-option active-sidebar" onclick="window.location.href='tterms.html'">
+        <span>TERMS OF SERVICE</span>
+    </div>
+    <div class="compass-secondary submenu-open">
+        <div class="sidebar-sub-option" onclick="window.location.href='tterms.html'">
+            <span>FOR TALENTS</span>
+        </div>
+        <div class="sidebar-sub-option active-sub" onclick="window.location.href='bterms.html'">
+            <span>FOR BRANDS</span>
+        </div>
+    </div>
+</aside>
     <main class="legal-container page-container">
         <div class="legal-tabs">
             <a href="policy.html" class="legal-tab">PRIVACY POLICY</a>
