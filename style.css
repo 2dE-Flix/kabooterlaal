@@ -797,7 +797,10 @@ a, button, span, .split-option, .hamburger, .social-card {
         letter-spacing: 1px;
     }
 }
-
+.sidebar-compass {
+    top: 8rem;
+    gap: 2rem;
+}
 @media (min-width: 1024px) {
 
   .contact-content.raw-text-block {
@@ -810,4 +813,9 @@ a, button, span, .split-option, .hamburger, .social-card {
     text-align: left;
   }
 
+}
+/* Hide legal tab nav — sidebar handles this on all screens */
+.legal-tabs,
+.legal-sub-tabs {
+    display: none;
 }
