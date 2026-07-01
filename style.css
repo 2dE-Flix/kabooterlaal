@@ -819,3 +819,150 @@ a, button, span, .split-option, .hamburger, .social-card {
 .legal-sub-tabs {
     display: none;
 }
+/* =========================================
+   LEGAL NAV — COMPLETE OVERHAUL
+   ========================================= */
+
+/* Kill the redundant tab rows everywhere */
+.legal-tabs,
+.legal-sub-tabs {
+    display: none !important;
+}
+
+/* Desktop sidebar — force correct vertical centering */
+.sidebar-compass {
+    position: fixed;
+    left: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    z-index: 100;
+}
+
+/* Sub-options indent under TOS on desktop */
+.compass-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    border-left: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.sidebar-sub-option {
+    cursor: pointer;
+    opacity: 0.45;
+    padding: 0.5rem 1rem;
+}
+
+.sidebar-sub-option span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.sidebar-sub-option.active-sub {
+    opacity: 1;
+}
+
+.sidebar-sub-option.active-sub span {
+    color: #00E5FF;
+}
+
+/* Mobile — clean horizontal rows below pill */
+@media (max-width: 768px) {
+
+    .sidebar-compass {
+        position: fixed;
+        left: 0;
+        top: 7.5rem;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transform: none;
+        z-index: 40;
+        padding: 0;
+    }
+
+    .sidebar-compass .sidebar-option {
+        padding: 0.4rem 0.2rem;
+        border-left: none !important;
+        background: transparent !important;
+        transform: none !important;
+        position: relative;
+    }
+
+    .sidebar-compass .sidebar-option::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background: #00E5FF;
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+        transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity: 0;
+    }
+
+    .sidebar-compass .sidebar-option.active-sidebar::after {
+        width: 100%;
+        opacity: 1;
+    }
+
+    .sidebar-compass .sidebar-option span {
+        font-size: 0.58rem;
+        letter-spacing: 3px;
+        opacity: 0.5;
+    }
+
+    .sidebar-compass .sidebar-option.active-sidebar span {
+        opacity: 1;
+    }
+
+    /* Sub-nav row (FOR TALENTS / FOR BRANDS) */
+    .compass-secondary {
+        position: fixed;
+        left: 0;
+        top: 10.5rem;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        padding-left: 0;
+        margin-top: 0;
+        border-left: none;
+        z-index: 40;
+    }
+
+    .sidebar-sub-option {
+        border-left: none !important;
+        background: transparent !important;
+        padding: 0.4rem 0.2rem;
+    }
+
+    .sidebar-sub-option span {
+        font-size: 0.55rem;
+        letter-spacing: 3px;
+        opacity: 0.45;
+    }
+
+    .sidebar-sub-option.active-sub span {
+        opacity: 1;
+        color: #00E5FF;
+    }
+
+    /* Push page content below both nav rows */
+    .legal-page .page-container {
+        padding-top: 15rem;
+    }
+}
