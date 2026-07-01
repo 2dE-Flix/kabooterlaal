@@ -378,13 +378,13 @@ a, button, span, .split-option, .hamburger, .social-card {
 
   .top-nav { 
     top: 15px; left: 5%; width: 90%; padding: 0.6rem 1.2rem; 
-    border-radius: 50px; background: rgba(2, 16, 36, 0.55); 
-    backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(120%);
-    border: 1px solid rgba(238, 244, 250, 0.08); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 30px; background: rgba(2, 16, 36, 0.15); 
+    backdrop-filter: blur(25px) saturate(100%); -webkit-backdrop-filter: blur(25px) saturate(100%);
+    border: 1px solid rgba(238, 244, 250, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
  body::before {
-    content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100px; 
-    background: linear-gradient(to bottom, #04068a 55%, transparent 100%); z-index: 95; pointer-events: none;
+    content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 90px; 
+    background: linear-gradient(to bottom,#051996 35%, transparent 100%); z-index: 95; pointer-events: none;
 }
 
     .text-logo { font-size: 1.1rem; letter-spacing: 6px; }
