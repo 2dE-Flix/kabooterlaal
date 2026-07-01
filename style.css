@@ -1219,9 +1219,9 @@ a, button, span, .split-option, .hamburger, .social-card {
 
 /* Restore original glass appearance */
 .liquid-glass-overlay {
-    background: rgba(4, 20, 60, 0.55); !important;
-    backdrop-filter: blur(35px) !important;
-    -webkit-backdrop-filter: blur(35px) !important;
+    background: rgba(4, 20, 60, 0.3); !important;
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
     z-index: 110 !important;
 }
 
