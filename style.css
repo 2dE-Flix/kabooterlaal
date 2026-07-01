@@ -1215,3 +1215,22 @@ a, button, span, .split-option, .hamburger, .social-card {
         padding-top: 2rem !important;
     }
 }
+/* RESTORE — overlay glass look + fix nav visibility */
+
+/* Restore original glass appearance */
+.liquid-glass-overlay {
+    background: rgba(0, 2, 8, 0.75) !important;
+    backdrop-filter: blur(35px) !important;
+    -webkit-backdrop-filter: blur(35px) !important;
+    z-index: 110 !important;
+}
+
+/* Raise top-nav ABOVE the overlay so RAVIE + CLOSE stay visible */
+.top-nav {
+    z-index: 120 !important;
+}
+
+/* Lower sidebar below overlay */
+.sidebar-compass {
+    z-index: 80 !important;
+}
