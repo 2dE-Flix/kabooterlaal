@@ -384,7 +384,7 @@ a, button, span, .split-option, .hamburger, .social-card {
 }
  body::before {
     content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100px; 
-    background: linear-gradient(to bottom, #000384 55%, transparent 100%); z-index: 95; pointer-events: none;
+    background: linear-gradient(to bottom, #000270 55%, transparent 100%); z-index: 95; pointer-events: none;
 }
 
     .text-logo { font-size: 1.1rem; letter-spacing: 6px; }
@@ -964,5 +964,67 @@ a, button, span, .split-option, .hamburger, .social-card {
     /* Push page content below both nav rows */
     .legal-page .page-container {
         padding-top: 15rem;
+    }
+}
+/* =========================================
+   LEGAL NAV MOBILE — FINAL POLISH
+   ========================================= */
+
+/* Page entry animation — content fades up */
+.legal-page .page-container {
+    animation: legalContentIn 0.7s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes legalContentIn {
+    0%   { opacity: 0; transform: translateY(24px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+
+    /* FIX 2 — Pull nav out of fixed, let it scroll with page */
+    .sidebar-compass {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 7.5rem;       /* clears the pill */
+        padding: 0 0 1rem 0;
+        /* FIX 1 — separator line below first row */
+        border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        animation: navSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* FIX 1 — center second row */
+    .compass-secondary {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 0.9rem 0 0.5rem 0;
+        margin-top: 0;
+        border-left: none;
+        border-bottom: none;
+        animation: navSlideDown 0.5s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* Reset page content padding — nav is now in flow */
+    .legal-page .page-container {
+        padding-top: 2rem;
+    }
+
+    /* Nav slide-down entry animation */
+    @keyframes navSlideDown {
+        0%   { opacity: 0; transform: translateY(-12px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
 }
