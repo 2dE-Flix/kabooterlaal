@@ -1219,7 +1219,7 @@ a, button, span, .split-option, .hamburger, .social-card {
 
 /* Restore original glass appearance */
 .liquid-glass-overlay {
-    background: rgba(0, 2, 8, 0.75) !important;
+    background: rgba(4, 20, 60, 0.55); !important;
     backdrop-filter: blur(35px) !important;
     -webkit-backdrop-filter: blur(35px) !important;
     z-index: 110 !important;
