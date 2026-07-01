@@ -150,7 +150,7 @@ a, button, span, .split-option, .hamburger, .social-card {
    ========================================= */
 .liquid-glass-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 2, 8, 0.75); backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); 
+    background: rgba(4, 20, 60, 0.55); backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); 
     z-index: 90; display: flex; justify-content: center; align-items: center;
     opacity: 0; pointer-events: none; transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
