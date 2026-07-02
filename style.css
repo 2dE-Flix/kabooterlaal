@@ -382,9 +382,16 @@ a, button, span, .split-option, .hamburger, .social-card {
     backdrop-filter: blur(25px) saturate(100%); -webkit-backdrop-filter: blur(25px) saturate(100%);
     border: 1px solid rgba(238, 244, 250, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
- body::before {
-    content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 90px; 
-    background: linear-gradient(to bottom,#051996 35%, transparent 100%); z-index: 95; pointer-events: none;
+  body::before {
+        content: ''; 
+        position: fixed; 
+        top: 0; left: 0; 
+        width: 100vw; 
+        height: 50px;                    /* ← Revert to 50px */
+        background: linear-gradient(to bottom, var(--bg-deep) 45%, transparent 100%);  /* ← Revert to var(--bg-deep) */
+        z-index: 95; 
+        pointer-events: none;
+    }
 }
 
     .text-logo { font-size: 1.1rem; letter-spacing: 6px; }
