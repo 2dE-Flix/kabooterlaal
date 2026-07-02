@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Clean, professional title and description -->
+    <title>RAVIE: The Talent Network</title>
+    <meta name="description" content="We connect brands with potential talents.">
+
+    <!-- Open Graph / Facebook / Instagram Link Preview Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ravie.in/">
+    <meta property="og:title" content="RAVIE: The Talent Network">
+    <meta property="og:description" content="We connect brands with potential talents.">
+    <!-- Make sure you upload an image named og-share.jpg to your github for this to work -->
+    <meta property="og:image" content="https://ravie.in/og-share.jpg">
+
+    <!-- Twitter Link Preview Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravie.in/">
+    <meta property="twitter:title" content="RAVIE: The Talent Network">
+    <meta property="twitter:description" content="We connect brands with potential talents.">
+    <meta property="twitter:image" content="https://ravie.in/og-share.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Sen:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="webgl-canvas" class="depth-surface"></canvas>
+    <div class="grain"></div>
+
+    <!-- DESKTOP HEADER -->
+    <header class="top-nav">
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none;"><span class="text-logo">RAVIE</span></a>
+        </div>
+        <div class="gateway-menu-toggle" id="gateway-menu-btn">MENU</div>
+        <div class="hamburger" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <!-- DESKTOP GLASS MENU OVERLAY -->
+    <div class="liquid-glass-overlay" id="liquid-glass-overlay">
+        <nav class="glass-nav-links">
+            <span onclick="window.location.href='index.html'">HOME</span>
+            <span onclick="window.location.href='about.html'">ABOUT</span>
+            <span onclick="window.location.href='socials.html'">CONTACT US</span>
+            <span onclick="window.location.href='policy.html'">LEGAL</span>
+        </nav>
+        <div class="copyright-footer">&copy; 2026 RAVIE. All rights reserved.</div>
+    </div>
+
+    <!-- MOBILE DROPDOWN -->
+    <div class="mobile-dropdown" id="mobile-dropdown">
+        <nav class="mobile-nav-links">
+            <span onclick="window.location.href='index.html'">HOME</span>
+            <span onclick="window.location.href='about.html'">ABOUT</span>
+            <span onclick="window.location.href='socials.html'">CONTACT US</span>
+            <span onclick="window.location.href='policy.html'">TERMS & POLICIES</span>
+      
+        </nav>
+    </div>
+
+    <!-- MAIN APP -->
+    <main id="app-container">
+
+        <!-- GATEWAY: The split-screen chooser -->
+        <section id="gateway-view" class="view active-view">
+            <div class="split-container">
+                <div class="split-option" id="btn-creators">
+                    <img src="assets/creator (web logo).png" alt="Talents" class="split-icon">
+                    <span class="split-text">TALENTS</span>
+                </div>
+                <div class="split-option" id="btn-brands">
+                    <img src="assets/Brand (web logo).png" alt="Brands" class="split-icon">
+                    <span class="split-text">BRANDS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLATFORM: The ledger content view -->
+        <section id="platform-view" class="view">
+
+            <aside class="platform-sidebar">
+                <div class="sidebar-option active-sidebar" id="side-talents">
+                    <span>TALENTS</span>
+                </div>
+                <div class="sidebar-option" id="side-brands">
+                    <span>BRANDS</span>
+                </div>
+            </aside>
+
+            <div class="platform-content">
+
+                <div class="ledger-stream" id="ledger-talents">
+                    <div class="raw-text-block">
+                        <h2>FOR TALENTS</h2>
+                        <p>At RAVIE, we take time to actually understand your content, style, and vision. If you have an engaging community, we connect you with brands that genuinely fit your niche.</p>
+                        <p>We believe every small creator has potential and they must be rewarded. Beyond just brand deals, we also help with creative direction, giving you fresh ideas whenever you get stuck or when you want to try something new.</p>
+                        <p>Together, we take your content to the next level. Our model is open for every potential creator, and that's how we are <strong>Decentralizing Opportunities.</strong></p>
+                        <a href="mailto:talents@ravie.in" class="terminal-link">Email &mdash; talents@ravie.in</a>
+                    </div>
+                </div>
+
+                <div class="ledger-stream" id="ledger-brands">
+                    <div class="raw-text-block">
+                        <h2>FOR BRANDS</h2>
+                        <p>We believe various potential creators can do more for you than a few big ones. So we take time to understand what your brand stands for and who you're trying to reach. Then we match you with hundreds of potential small creators whose content genuinely aligns with your goals, not whoever only has the biggest following.</p>
+                        <p>We work closely with these small creators to shape content that feels native to their platform while still delivering your message clearly.</p>
+                        <p>A few big people can't represent the whole niche due to a lack of deep connection, so spreading brand awareness among thousands of small creators is our vision.</p>
+                        <a href="mailto:brands@ravie.in" class="terminal-link">Email &mdash; brands@ravie.in</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Clock &mdash; desktop only, hidden on mobile via CSS -->
+    <div id="console-clock">00:00:00</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
